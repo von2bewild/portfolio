@@ -13,17 +13,28 @@ import React from 'react';
 import vonLogo from 'images/logo.svg';
 import ReactSVG from 'react-svg';
 import { Flex } from 'components/Grid';
-import { MainWrapper } from './styles';
+import { MainWrapper, Svg, Point1, Point2 } from './styles';
+import Content from './Content';
 
 export default class HomePage extends React.PureComponent {
   render() {
     return (
       <MainWrapper>
-        <Flex justify="center" align="center" height="100vh">
-          <ReactSVG
-            path={vonLogo}
-            className="example"
-          />
+        <Flex justify="center" align="center" height="100%">
+          <Svg>
+            <ReactSVG path={vonLogo} />
+          </Svg>
+          <Content />
+          <Point1>
+            <span className="line1" />
+            <span className="line2" />
+            <span className="line3" />
+          </Point1>
+          <Point2>
+            <span className="line1" />
+            <span className="line2" />
+            <span className="line3" />
+          </Point2>
         </Flex>
       </MainWrapper>
     );

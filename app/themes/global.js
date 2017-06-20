@@ -23,7 +23,7 @@ injectGlobal`
     font-size: 10px;
     height: 100%;
     width: 100%;
-    font-family: Arial, sans-serif;
+    font-family: Courier, monospace;
   }
 
   body.fontLoaded {

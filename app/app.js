@@ -46,10 +46,9 @@ import './themes/global';
 import createRoutes from './routes';
 
 // Font Observer
-const openSansObserver = new FontFaceObserver('Open Sans', {});
+const fontObserver = new FontFaceObserver('Special Elite', {});
 
-// When Open Sans is loaded, add a font-family using Open Sans to the body
-openSansObserver.load().then(() => {
+fontObserver.load().then(() => {
   document.body.classList.add('fontLoaded');
 }, () => {
   document.body.classList.remove('fontLoaded');

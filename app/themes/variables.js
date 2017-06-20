@@ -1,8 +1,8 @@
 import { css } from 'styled-components';
 
 export const fontFamily = {
-  fontPrimary: '"Open Sans", Arial, sans-serif',
-  fontSecondary: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+  fontPrimary: '"Special Elite", Courier, monospace',
+  fontSecondary: 'Courier, monospace',
 };
 
 export const colors = {
