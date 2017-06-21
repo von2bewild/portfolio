@@ -1,8 +1,8 @@
 import React from 'react';
-// import styled from 'styled-components';
 import Typist from 'react-typist';
 import { H1 } from 'components/Text';
 import { ContentWrapper } from './styles';
+import Product from './Product';
 
 class Content extends React.PureComponent {
   state = {
@@ -22,24 +22,18 @@ class Content extends React.PureComponent {
           <Typist
             avgTypingDelay={150}
             cursor={{ show: false }}
-            startDelay={1000}
+            startDelay={500}
           >
-            <H1 size="5em">Need animator?</H1>
+            <H1 size="5em">Need next level animations?</H1>
           </Typist>
+          <Product />
           <Typist
             avgTypingDelay={150}
             cursor={{ show: false }}
-            startDelay={5000}
+            startDelay={8000}
           >
-            <H1 size="5em">Hire me!</H1>
-          </Typist>
-          <Typist
-            avgTypingDelay={150}
-            cursor={{ show: false }}
-            startDelay={7000}
-          >
-            <H1 size="2em" margin="100px 0 0 0">
-              Road to Bangkok 2017! - von2bewild
+            <H1 size="2.5em" margin="40px 0 0 0">
+              Road to Bangkok 2017! Lets do this!.. chos!
             </H1>
           </Typist>
         </ContentWrapper>

@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import { colors, position } from 'themes/variables';
+import { colors, position, media1 } from 'themes/variables';
+import bg from 'images/bg.jpg';
 
 const animate1 = keyframes`
   from {
@@ -10,6 +11,7 @@ const animate1 = keyframes`
   }
   to {
     transform: rotateY(0deg);
+    transform-origin: 0 0 0;
     opacity: 1;
     visibility: visible;
   }
@@ -24,6 +26,18 @@ const animate2 = keyframes`
   }
   to {
     transform: rotateY(0deg);
+    transform-origin: 100% 100% 0;
+    opacity: 1;
+    visibility: visible;
+  }
+`;
+
+const bgAnimate = keyframes`
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
     opacity: 1;
     visibility: visible;
   }
@@ -43,30 +57,57 @@ export const MainWrapper = styled.section`
   height: 100%;
   width: 100%;
   text-align: center;
-  background: ${colors.black[0]};
+  background: ${colors.black[2]};
   padding: 50px;
   font-size: 10px;
+  ${media1.phone`
+    font-size: 5px;
+    padding: 50px 20px;
+  `}
+
+  :after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    background: url(${bg}) center;
+    background-size: cover;
+    opacity: 0;
+    visibility: hidden;
+    animation: ${bgAnimate} 1s 11s linear forwards;
+    z-index: -1;
+  }
 
   svg {
     width: 250px;
     height: 200px;
     position: relative;
-
-    .cls-1{
+    
+    .line-1{
       opacity: 0;
       visibility: hidden;
       position: absolute;
-    }
-    .line-1{
       animation: ${animate1} .3s .5s linear forwards, ${logoColor} .3s 2.2s linear forwards;
     }
     .line-2{
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
       animation: ${animate1} .3s .8s linear forwards, ${logoColor} .3s 2.2s linear forwards;
     }
     .line-3{
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
       animation: ${animate2} .3s 1.2s linear forwards, ${logoColor} .3s 2.2s linear forwards;
     }
     .line-4{
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
       animation: ${animate2} .3s 1.5s linear forwards, ${logoColor} .3s 2.2s linear forwards;
     }
   }
@@ -195,5 +236,6 @@ export const ContentWrapper = styled.section`
   position: absolute;
   ${position.centerXY};
   color: ${colors.white[0]};
-  width: 100%;
+  width: 90%;
+  z-index: 100;
 `;
